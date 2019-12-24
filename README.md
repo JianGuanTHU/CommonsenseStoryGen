@@ -29,8 +29,8 @@ The code is written in [TensorFlow](https://www.tensorflow.org/) library. To use
 - Parameter setting
 
   ```
-  --is_train		Set to True/False to train/inference. (default True)
-  --cond			Set to True/False to generate stories unconditionally/conditionally on the beginning. (default True)
+  --is_train		Set to 1/0 to train/inference. (default True)
+  --cond			Set to 1/0 to generate stories unconditionally/conditionally on the beginning. (default True)
   --model_dir		Model directory.
   --gpu			Specify which gpu to use. (default 0)
   --batch_size		Number of batches (only affects speed/memory, default 10)
@@ -49,20 +49,20 @@ The code is written in [TensorFlow](https://www.tensorflow.org/) library. To use
 
   The pretrained model can be post-trained on the knowledge bases by executing the following command:
 
-  `python3 main.py --is_train True --data_name kg `
+  `python3 main.py --is_train 1 --data_name kg `
 
   And then the model is trained on the ROCStories corpus with multi-task learning by executing the following command:
 
-  `python3 main.py --is_train True --data_name multi_roc `
+  `python3 main.py --is_train 1 --data_name multi_roc `
 
 - Inference
 
   You can generating stories conditionally on the beginning using the following command:
 
-  `python3 main.py --is_train False --cond True --data_name roc `
+  `python3 main.py --is_train 0 --cond 1 --data_name roc `
 
   You can generating stories unconditionally using the following command:
 
-  `python3 main.py --is_train False --cond False --data_name roc `
+  `python3 main.py --is_train 0 --cond 0 --data_name roc `
 
   1000 conditionally generated stories can be found [here]().

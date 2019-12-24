@@ -4,8 +4,8 @@ import sample, model, encoder
 import json
 import os
 import random
-tf.app.flags.DEFINE_boolean("is_train", True, "Set to True/False to train/inference.")
-tf.app.flags.DEFINE_boolean("cond", True, "Set to True/False to generate stories unconditionally/conditionally on the beginning.")
+tf.app.flags.DEFINE_integer("is_train", 1, "Set to 1/0 to train/inference.")
+tf.app.flags.DEFINE_integer("cond", 1, "Set to 1/0 to generate stories unconditionally/conditionally on the beginning.")
 tf.app.flags.DEFINE_string("model_dir", "./model/gpt2", "Model directory.")
 tf.app.flags.DEFINE_string("gpu", "0", "Specify which gpu to use.")
 tf.app.flags.DEFINE_integer("batch_size", 10, "Number of batches (only affects speed/memory).")
@@ -19,7 +19,8 @@ tf.app.flags.DEFINE_integer("length", 200, "Number of tokens in generated text."
 tf.app.flags.DEFINE_float("temperature", 0.7, "Float value controlling randomness in boltzmann distribution. Lower temperature results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive. Higher temperature results in more random completions.")
 tf.app.flags.DEFINE_integer("top_k", 40, "Integer value controlling diversity.")
 FLAGS = tf.app.flags.FLAGS
-
+FLAGS.is_train = bool(FLAGS.is_train)
+FLAGS.cond = bool(FLAGS.cond)
 model_dir = os.path.expanduser(os.path.expandvars(FLAGS.model_dir))
 enc = encoder.get_encoder(model_dir)
 PAD_ID = enc.encoder['<|endoftext|>']
