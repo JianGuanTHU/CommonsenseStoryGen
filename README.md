@@ -29,19 +29,19 @@ The code is written in [TensorFlow](https://www.tensorflow.org/) library. To use
 - Parameter setting
 
   ```
-  --is_train			Set to True/False to train/inference. (default True)
-  --cond			Set to True/False to generate stories unconditionally/conditionally on the beginning. (default True)
-  --model_dir			Model directory.
+  --is_train		Set to True/False to train/inference. (default True)
+  --cond				Set to True/False to generate stories unconditionally/conditionally on the beginning. (default True)
+  --model_dir		Model directory.
   --gpu			Specify which gpu to use. (default 0)
-  --batch_size			Number of batches (only affects speed/memory, default 10)
-  --data_name			Set `roc` to train the model on ROCStories corpus or \
+  --batch_size		Number of batches (only affects speed/memory, default 10)
+  --data_name		Set `roc` to train the model on ROCStories corpus or \
   						`kg` to train the model on the knowledge bases or\
   						`multi_roc` to train the model on ROCStories with multi-task learning.
-  --n_class			Number of classes for the auxiliary classification task. (default 4)
-  --learning_rate			Learning rate. (default 1e-4)
-  --data_dir			Data directory.
-  --length			Number of tokens in generated text. (default 200)
-  --temperature			Float value controlling randomness in boltzmann distribution. Lower temperature results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive. Higher temperature results in more random completions. (default 0.7)
+  --n_class		Number of classes for the auxiliary classification task. (default 4)
+  --learning_rate		Learning rate. (default 1e-4)
+  --data_dir		Data directory.
+  --length		Number of tokens in generated text. (default 200)
+  --temperature		Float value controlling randomness in boltzmann distribution. Lower temperature results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive. Higher temperature results in more random completions. (default 0.7)
   --top_k			Integer value controlling diversity. (default 40)
   ```
 
