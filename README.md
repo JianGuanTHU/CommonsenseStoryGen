@@ -29,8 +29,8 @@ The code is written in [TensorFlow](https://www.tensorflow.org/) library. To use
 - Parameter setting
 
   ```
-  --is_train		Set to 1/0 to train/inference. (default True)
-  --cond			Set to 1/0 to generate stories unconditionally/conditionally on the beginning. (default True)
+  --is_train		Set to 1/0 to train/inference.
+  --cond			Set to 1/0 to generate stories unconditionally/conditionally on the beginning.
   --model_dir		Model directory.
   --gpu			Specify which gpu to use. (default 0)
   --batch_size		Number of batches (only affects speed/memory, default 10)
