@@ -1,5 +1,5 @@
 # CommonsenseStoryGen
-This repository contains the source code for the paper [A Knowledge-Enhanced Pretraining Model for Commonsense Story Generation]() by Jian Guan, Fei Huang, [Minlie Huang](http://coai.cs.tsinghua.edu.cn/hml/), Zhihao Zhao, Xiaoyan Zhu, presented at TACL. 
+This repository contains the source code for the paper [A Knowledge-Enhanced Pretraining Model for Commonsense Story Generation]() by Jian Guan, Fei Huang, Zhihao Zhao, Xiaoyan Zhu, [Minlie Huang](http://coai.cs.tsinghua.edu.cn/hml/), presented at TACL. 
 
 Contact info: j-guan19@mails.tsinghua.edu.cn
 
@@ -49,20 +49,21 @@ The code is written in [TensorFlow](https://www.tensorflow.org/) library. To use
 
   The pretrained model can be post-trained on the knowledge bases by executing the following command:
 
-  `python3 main.py --is_train 1 --data_name kg `
+  ​	`python3 main.py --is_train 1 --data_name kg `
 
   And then the model is trained on the ROCStories corpus with multi-task learning by executing the following command:
 
-  `python3 main.py --is_train 1 --data_name multi_roc `
+  ​	`python3 main.py --is_train 1 --data_name multi_roc `
 
 - Inference
 
   You can generating stories conditionally on the beginning using the following command:
 
-  `python3 main.py --is_train 0 --cond 1 --data_name roc `
+  ​	`python3 main.py --is_train 0 --cond 1 --data_name roc `
 
   You can generating stories unconditionally using the following command:
 
-  `python3 main.py --is_train 0 --cond 0 --data_name roc `
+  ​	`python3 main.py --is_train 0 --cond 0 --data_name roc `
 
-  1000 conditionally generated stories can be found [here]().
+  1000 conditionally generated stories (the beginnings are sampled from the testing set) can be found in `sample_generation_story.txt`.
+
