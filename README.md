@@ -35,8 +35,8 @@ The code is written in [TensorFlow](https://www.tensorflow.org/) library. To use
   --gpu			Specify which gpu to use. (default 0)
   --batch_size		Number of batches (only affects speed/memory, default 10)
   --data_name		Set `roc` to train the model on ROCStories corpus or \
-  			`kg` to train the model on the knowledge bases or \
-  			`multi_roc` to train the model on ROCStories with multi-task learning.
+  				`kg` to train the model on the knowledge bases or \
+  				`multi_roc` to train the model on ROCStories with multi-task learning.
   --n_class		Number of classes for the auxiliary classification task. (default 4)
   --learning_rate		Learning rate. (default 1e-4)
   --data_dir		Data directory.
